@@ -27,5 +27,5 @@ export default defineConfig({
   },
   srcDir: '../guide',
   outDir: '../docs',
-  base: 'vuepress-test',
+  base: '/vuepress-test/',
 })
