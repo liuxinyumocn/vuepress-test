@@ -34,12 +34,15 @@ jobs:
         ssh-keyscan github.com >> ~/.ssh/known_hosts
 
     - name: Deploy to Pages
-      run: |
+      run: |        
         git config --global user.name "nebulaliu"
         git config --global user.email "nebulaliu@tencent.com"
         git remote set-url origin git@github.com:liuxinyumocn/vuepress-test.git
         git checkout --orphan pages
-        git add -f ./docs
+        git rm -rf .
+        mkdir docs
+        rsync -av --exclude='.git' ./docs/ ./docs/
+        git add -f .
         git commit -m "Deploy from GitHub Actions"
         git push -f origin pages
       env:
