@@ -43,7 +43,7 @@ jobs:
         git remote set-url origin git@github.com:liuxinyumocn/vuepress-test.git
         git checkout --orphan pages
         git rm -rf .
-        mv -rf ../temp/docs/* .
+        mv -f ../temp/docs/* .
         git add -f .
         git commit -m "Deploy from GitHub Actions"
         git push -f origin pages
