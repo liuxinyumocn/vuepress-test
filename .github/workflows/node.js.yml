@@ -36,3 +36,4 @@ jobs:
         git_config_name: nebulaliu
         git_config_email: nebulaliu@tencent.com
         force: true
+        clean: true
