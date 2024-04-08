@@ -36,7 +36,6 @@ jobs:
     - name: Deploy to Pages
       run: |
         mkdir ../temp
-        mv .git ../temp
         mv docs ../temp
         ls ../temp
         git config --global user.name "nebulaliu"
@@ -44,7 +43,6 @@ jobs:
         git remote set-url origin git@github.com:liuxinyumocn/vuepress-test.git
         git checkout --orphan pages
         git rm -rf .
-        mv ../temp/.git .
         mv -rf ../temp/docs/* .
         git add -f .
         git commit -m "Deploy from GitHub Actions"
