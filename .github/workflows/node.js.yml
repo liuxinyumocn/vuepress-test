@@ -29,7 +29,9 @@ jobs:
     - name: Deploy to Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.DEPLOY_KEY }}
+        deploy_key: ${{ secrets.DEPLOY_KEY }}
         publish_dir: ./docs  # 或者你的构建输出目录
         publish_branch: pages
         force_orphan: true
+        git_config_name: nebulaliu
+        git_config_email: nebulaliu@tencent.com
